@@ -5,3 +5,4 @@ console.log(BillAmount)
 let totalBill = BillAmount/4;
 console.log(totalBill)
 document.write(totalBill)
+

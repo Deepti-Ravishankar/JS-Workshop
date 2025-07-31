@@ -92,12 +92,31 @@ totalMarks(deepti)
 
 async function getposts(){
 
-    let response = await fetch("https://jsonplaceholder.typicode.com/users")
+    let response = await fetch("https://jsonplaceholder.typicode.com/users") //get response
 
-    let posts = await response.json()
+    let posts = await response.json() //convert response to readable json format from raw data
 
-    console.log(posts)
-
+    console.log(posts)   //print json data
 
 }
 getposts()
+
+//logic building - its breaking down a problem into simpler steps.
+
+//Day 4
+let query = "what is the age of earth?"
+async function gemini(){
+    let response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDvlRGovYsZc-2FX___sQGRnjn80mSg60Y",{
+        method:"POST",              
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+            contents:[{parts:[{text:query}]}]
+        })
+    })
+
+    let data = await response.json()
+    console.log(data)
+    document.write(data.candidates[0].content.parts[0].text) //path in response
+
+}
+gemini()
