@@ -1,3 +1,5 @@
+//Day1
+
 console.log("This is in the separate JS file within the script.js")
 document.write("This prints in the browser page <br>")
 document.write("youtube<br>")
@@ -27,6 +29,8 @@ document.write("multiplcation:"+multiplcation+"<br>")
 
 let division = num1/num2
 document.write("division:"+division+"<br>")
+
+//Day2
 
 let myarray = ["Raj", "Manish", "Harshini", "Rakesh", "Manju"]
 // let myname1 = "Raj"
@@ -83,3 +87,17 @@ function totalMarks(student){
     console.log(total)
 }
 totalMarks(deepti)
+
+//Day3
+
+async function getposts(){
+
+    let response = await fetch("https://jsonplaceholder.typicode.com/users")
+
+    let posts = await response.json()
+
+    console.log(posts)
+
+
+}
+getposts()
